@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Hello WebSocket</title>
-    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet" type="text/css" />
-    <script src="/webjars/jquery/jquery.min.js"></script>
-    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
-    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
-    <script src="/app.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Swordle</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <h1>Wordle</h1>
 </head>
-<body>
-<noscript><h2 style="color: #ff0000">Seems your browser doesn't support Javascript! Websocket relies on Javascript being
+  
+<body class="dark">  
+  <noscript><h2 style="color: #ff0000">Seems your browser doesn't support Javascript! Websocket relies on Javascript being
     enabled. Please enable
     Javascript and reload this page!</h2></noscript>
 <div id="main-content" class="container">
@@ -49,7 +49,7 @@
         </div>
     </div>
 </div>
-   <div class="box">
+  <div class="box">
     <div class="grid">
       <div class=row1>
         <input class="answer" type="text" maxlength="1" onkeyup="jump001(this, 'id02')"/>
@@ -109,6 +109,7 @@
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     </form>
-  <script src="script.js"></script>
+  <script src="app.js"></script>
 </body>
+
 </html>
