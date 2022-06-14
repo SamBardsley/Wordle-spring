@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello WebSocket</title>
+    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+    <script src="/app.js"></script>
+</head>
+<body>
+<noscript><h2 style="color: #ff0000">Seems your browser doesn't support Javascript! Websocket relies on Javascript being
+    enabled. Please enable
+    Javascript and reload this page!</h2></noscript>
+<div id="main-content" class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="connect">WebSocket connection:</label>
+                    <button id="connect" class="btn btn-default" type="submit">Connect</button>
+                    <button id="disconnect" class="btn btn-default" type="submit" disabled="disabled">Disconnect
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="name">What is your name?</label>
+                    <input type="text" id="name" class="form-control" placeholder="Your name here...">
+                </div>
+                <button id="send" class="btn btn-default" type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <table id="conversation" class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Greetings</th>
+                </tr>
+                </thead>
+                <tbody id="greetings">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+   <div class="box">
+    <div class="grid">
+      <div class=row1>
+        <input class="answer" type="text" maxlength="1" onkeyup="jump001(this, 'id02')"/>
+        <input class="answer" type="text" maxlength="1" onkeyup="jump001(this, 'id03')"/>
+        <input class="answer" type="text" maxlength="1" onkeyup="jump001(this, 'id04')"/>
+        <input class="answer" type="text" maxlength="1" onkeyup="jump001(this, 'id05')"/>
+        <input class="answer" type="text" maxlength="1" onkeyup="jump001(this, 'id06')"/>
+      </div>
+      <div class=space></div>
+      <div class=row2>
+        <input class="answer" type="text" maxlength="1" onkeyup="jump001(this, 'id07')"/>
+        <input class="answer" type="text" maxlength="1" onkeyup="jump001(this, 'id08')"/>
+        <input class="answer" type="text" maxlength="1" onkeyup="jump001(this, 'id09')"/>
+        <input class="answer" type="text" maxlength="1" onkeyup="jump001(this, 'id10')"/>
+        <input class="answer" type="text" maxlength="1" onkeyup="jump001(this, 'id11')"/>
+      </div>
+      <div class=space></div>
+      <div class=row3>
+        <input class="answer" type="text" maxlength="1" onkeyup="jump001(this, 'id11')"/>
+        <input class="answer" type="text" maxlength="1" onkeyup="jump001(this, 'id11')"/>
+        <input class="answer" type="text" maxlength="1" onkeyup="jump001(this, 'id11')"/>
+        <input class="answer" type="text" maxlength="1" onkeyup="jump001(this, 'id11')"/>
+        <input class="answer" type="text" maxlength="1" onkeyup="jump001(this, 'id11')"/>
+      </div>
+      <div class=space></div>
+      <div class=row4>
+        <input class="answer" type="text" maxlength="1" onkeyup="jump001(this, 'id12')"/>
+        <input class="answer" type="text" maxlength="1" onkeyup="jump001(this, 'id13')"/>
+        <input class="answer" type="text" maxlength="1" onkeyup="jump001(this, 'id14')"/>
+        <input class="answer" type="text" maxlength="1" onkeyup="jump001(this, 'id15')"/>
+        <input class="answer" type="text" maxlength="1" onkeyup="jump001(this, 'id16')"/>
+      </div>
+      <div class=space></div>
+      <div class=row5>
+        <input class="answer" type="text" maxlength="1" onkeyup="jump001(this, 'id17')"/>
+        <input class="answer" type="text" maxlength="1" onkeyup="jump001(this, 'id18')"/>
+        <input class="answer" type="text" maxlength="1" onkeyup="jump001(this, 'id19')"/>
+        <input class="answer" type="text" maxlength="1" onkeyup="jump001(this, 'id20')"/>
+        <input class="answer" type="text" maxlength="1" onkeyup="jump001(this, 'id21')"/>
+      </div>
+      <div class=space></div>
+      <div class=row6>
+        <input class="answer" type="text" maxlength="1" onkeyup="jump001(this, 'id22')"/>
+        <input class="answer" type="text" maxlength="1" onkeyup="jump001(this, 'id23')"/>
+        <input class="answer" type="text" maxlength="1" onkeyup="jump001(this, 'id24')"/>
+        <input class="answer" type="text" maxlength="1" onkeyup="jump001(this, 'id25')"/>
+        <input class="answer" type="text" maxlength="1" onkeyup="jump001(this, 'id26')"/>
+      </div>
+    </div>
+  </div>
+    <form>
+      <button type = "button" class="button" id = "toggle_btn">
+      <span class="button__text">Toggle theme</span>
+        <span class="button__icon">
+          <ion-icon name="sunny-outline"></ion-icon>
+        </span>
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    </form>
+  <script src="script.js"></script>
+</body>
+</html>
